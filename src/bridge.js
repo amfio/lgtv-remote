@@ -26,6 +26,12 @@ export class Bridge {
         return this._connectionPromise;
     }
 
+    disconnect() {
+        this._connectionPromise = null;
+        this._socket.close();
+        this._socket = null;
+    }
+
     _connectToTv() {
         return new Promise((resolve) => {
             this._socket = new WebSocketClient(this._address);

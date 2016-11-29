@@ -1,8 +1,8 @@
 {
   "name": "lgtv-remote",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "API to interact with WebOS LG SmartTVs",
-  "main": "lgtv.js",
+  "main": "dist/lgtv-remote.js",
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,6 @@
     "webpack": "^1.13.3"
   },
   "dependencies": {
-    "websocket": "^1.0.22"
+    "ws": "^1.1.1"
   }
 }

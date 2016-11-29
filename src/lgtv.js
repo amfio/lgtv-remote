@@ -30,4 +30,8 @@ export class LGTV {
     turnOff() {
         return this._bridge.sendMessage(URL.TURN_OFF, payload);
     }
+
+    disconnect() {
+        return this._bridge.disconnect();
+    }
 }
