@@ -4,7 +4,8 @@ module.exports = {
   entry: './src/lgtv.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'lgtv-remote.js'
+    filename: 'lgtv-remote.js',
+    libraryTarget: 'commonjs'
   },
   target: 'node',
   module: {
