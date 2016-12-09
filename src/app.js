@@ -4,7 +4,7 @@ export class App {
     constructor(bridge, title, id) {
         this._bridge = bridge;
         this.title = title;
-        this.id = id;
+        this.id = id.replace('_default', '');
     }
 
     open() {
@@ -17,7 +17,7 @@ export class App {
 
     close() {
         const payload = {
-            id: this.id
+            id: this.id + '_default'
         };
         
         return this._bridge.sendMessage(URL.CLOSE_APP, payload);

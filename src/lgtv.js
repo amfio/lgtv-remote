@@ -21,14 +21,21 @@ export class LGTV {
     getApps() {
         return this._bridge.sendMessage(URL.GET_APPS).then((response) => {
             return response.payload.launchPoints.map((launchPoint) => {
-                console.log('APP:', launchPoint.title, launchPoint.launchPointId);
                 return new App(this._bridge, launchPoint.title, launchPoint.launchPointId);
             });
         });
     }
 
+    getInputs() {
+        return this._bridge.sendMessage(URL.GET_INPUTS).then((response) => {
+            return response.payload.devices.map((device) => {
+                return new App(this._bridge, device.label, device.appId);
+            });
+        });
+    }
+
     turnOff() {
-        return this._bridge.sendMessage(URL.TURN_OFF, payload);
+        return this._bridge.sendMessage(URL.TURN_OFF);
     }
 
     disconnect() {
